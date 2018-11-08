@@ -1,7 +1,8 @@
-
+#                                                django的一些用法笔记
 view:	
-	request.body   请求体
-		request.POST(request.body)     源碼中post files等这些方法都是在request.body中去取相应的内容
+	 请求体 a.request.body()  
+	 源碼中post files等这些方法都是在request.body中去取相应的内容
+		request.POST(request.body)     
 		request.FILES(request.body)  
 		request.GET
 
@@ -9,7 +10,7 @@ view:
 	在django中没有 request.put  request.delete 这些方法 如果想用怎么办呢？
 	依靠request.body 自己去取相应的数据 
 
-	request.Meta()
+	b.request.Meta()
 		request.method(POST,GET,PUT)
 		request.path_info
 		request.COOKIES
