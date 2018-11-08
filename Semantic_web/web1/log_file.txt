@@ -1,0 +1,2 @@
+
+2018-11-07 20:44:44,526 - DEBUG - {'signal': <django.db.models.signals.ModelSignal object at 0x00000234ED247FD0>, 'instance': <Account: Account object (5)>, 'created': True, 'update_fields': None, 'raw': False, 'using': 'default'}

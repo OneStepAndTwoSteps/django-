@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign_up page</title>
+</head>
+  <link rel="stylesheet" type="text/css" href="/static/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/components/container.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/header.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/image.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/form.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/input.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/button.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/list.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/message.css">
+  <link rel="stylesheet" type="text/css" href="/static/components/icon.css">
+
+
+
+<body >
+    <form action="/sign_up/" method="POST" id="user_info">
+        {% csrf_token %}
+{#        {{ csrf_token }}#}
+{#        这样写如果输入格式错误 他原先输入的内容就会被清空 所以我们改成      #}
+{#        <p><input type="text" name="user"> {{ obj.errors.user.0 }}</p>#}
+{#        <p><input type="text" name="pwd">  {{ obj.errors.pwd.0 }}</p>#}
+{#        <p><input type="text" name="mail"> {{ obj.errors.mail.0 }}</p> #}
+        {#   所以改成这样   #}
+
+          <div class="ui ">
+            <p>{{ obj.user.label }}<div class="ui input" >{{ obj.user }} {{ obj.errors.user.0 }}</div></p>
+            <p>{{ obj.password.label }}<div class="ui input">{{ obj.password }}  {{ obj.errors.password.0 }}</div></p>
+{#            <p><div class="ui input">{{ obj.mail }} {{ obj.errors.mail.0 }}</div></p>#}
+          </div>
+
+        <button id="sub" class="ui button " style="margin-left: 0px">提交</button>
+
+
+        <a href="/login/" class="ui button" tabindex="0">登录</a>
+
+{#        <p><input id="sub" type="submit" value="提交"></p>#}
+
+    </form>
+</body>
+<script src="/static/jquery-1.12.4.js"></script>
+<script src="/static/jquery.cookie.js"></script>
+
+{#<script>#}
+{#   $(function () {#}
+{#       $.ajaxSetup({#}
+{#           beforeSend:function (xhr,settings) {#}
+{#               xhr.setRequestHeader("X-CSRFtoken",$.cookie("csrftoken"));#}
+{#           }#}
+{#       });#}
+{##}
+{##}
+{#       $('#sub').click(function () {#}
+{#           $.ajax({#}
+{#               url:"sign_up",#}
+{#               type: "POST",#}
+{#               data:{'user': $('#1'), 'pwd': $('#2')},#}
+{#               success:function(data) {#}
+{#                   if (data=="200") {#}
+{#                       alert("帐号创建成功")#}
+{#                   }#}
+{#                    else {alert("ffuck")}#}
+{#               },#}
+{##}
+{#           })#}
+{#       })#}
+{#   })#}
+{#</script>#}
+
+</html>
